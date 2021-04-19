@@ -74,3 +74,7 @@ Ej.
 **Bases de Datos No Relacionales**: son de bases de datos sin una tabla fija como las que sí se encuentran en las bases de datos relacionales, lo que permite una alta escalabilidad en ellas. Además, es abierta y por lo tanto flexible a diferentes tipos de datos y no necesita tantos recursos para ejecutarse; de hecho, el hardware necesario no cuesta mucho.
 
 _un mock es falsear una base de datos_
+
+# WebSockets: Qué son, por qué son interesantes y cómo usarlos
+
+El protocolo Websocket o wss:// crea un túnel de información entre el usuario y el servidor el cual se quedará abierto hasta que el servidor y/o el cliente cierre la conexión para pedir información en tiempo real.
