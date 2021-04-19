@@ -25,7 +25,9 @@ router.post('/message', (req, res) => {
 router.delete('/message', (req, res) => {
     console.log(req.query);
     console.log(req.body);
-    res.send('HOLA desde DELETE:' + req.body.text);
+    //res.send();
+    res.status(201).send([{ error: '', body: 'creado correctamente' }]);
+    //res.send('HOLA desde DELETE:' + req.body.text);
 });
 /* 
 app.use('/', (req, res) => {
