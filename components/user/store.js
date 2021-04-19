@@ -6,16 +6,13 @@ function addUser(User) {
     return myUser.save();
 
 }
-/*
-async function getUsers(filterUser) {
-    let filter = {};
-    if (filterUser != null) {
-        filter = { user: filterUser };
-    }
-    const messages = await Model.find(filter);
+
+async function listUsers() {
+
+    const messages = await Model.find();
     return messages;
 }
-
+/*
 async function updateText(id, message) {
     const foundMessage = await Model.findOne({ _id: id });
     foundMessage.message = message;
@@ -31,4 +28,5 @@ function removeMessage(id) {
 */
 module.exports = {
     add: addUser,
+    list: listUsers,
 }

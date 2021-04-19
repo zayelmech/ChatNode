@@ -14,20 +14,18 @@ router.post('/', (req, res) => {
         });
 });
 
-/* 
-router.get('/', (req, res) => {
-    const filterMessages = req.query.user || null;
 
-    controller.getMessages(filterMessages)
-        .then((messageList) => {
-            response.success(req, res, messageList, 200);
+router.get('/', (req, res) => {
+    controller.listUsers()
+        .then((users) => {
+            response.success(req, res, users, 200);
         })
         .catch(e => {
             response.error(req, res, 'Error inesperado', 500, e);
         });
 
 });
-
+/*
 router.patch('/:id', function(req, res) {
     //console.log(req.params.id);
     controller.updateMessage(req.params.id, req.body.message)
