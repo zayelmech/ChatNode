@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const response = require('../../network/response');
-const controller = require('./controller'
+const controller = require('./controller');
 
-)
+
 router.get('/', (req, res) => {
     const filterMessages = req.query.user || null;
 
@@ -42,7 +42,7 @@ router.patch('/:id', function(req, res) {
 router.delete('/:id', (req, res) => {
     controller.deleteMessage(req.params.id)
         .then(() => {
-            response.success(req, res, `Usuario ${req.params.id} eliminado`, 200)
+            response.success(req, res, `Mensaje ${req.params.id} eliminado`, 200)
         })
         .catch(e => {
             response.error(req, res, '[on delete error]', 500, e);

@@ -1,18 +1,6 @@
-const db = require('mongoose');
 const Model = require('./model');
-const dbUserData = require('./dbUserData');
 
-const dbUser = dbUserData.user;
-const dbPassword = dbUserData.password;
 
-db.Promise = global.Promise;
-db.connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.d54r6.mongodb.net/platziNode?retryWrites=true&w=majority`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName: 'messages'
-});
-
-console.log('[db] conectada con exito');
 
 function addMessage(message) {
 
