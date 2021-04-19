@@ -66,3 +66,6 @@ Métodos HTTP:
 Ej.
 `{miweb.com?color=red}`
 `{api.com/person?orderBy=name&age=25}`
+
+# DB
+un mock es falsear una base de datos

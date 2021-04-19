@@ -5,11 +5,13 @@ const controller = require('./controller'
 
 )
 router.get('/', (req, res) => {
-    console.log(req.headers);
-    res.header({
-        "custom-header": "Nuestro valor personalizado"
-    })
-    response.success(req, res, 'Lista de mensajes');
+    controller.getMessages()
+        .then((messageList) => {
+            response.success(req, res, messageList, 200);
+        })
+        .catch(e => {
+            response.error(req, res, 'Error inesperado', 500, e);
+        });
 
 });
 
