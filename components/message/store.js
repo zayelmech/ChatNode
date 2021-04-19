@@ -13,11 +13,9 @@ db.connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.d54r6.mongodb.net/pla
 });
 
 console.log('[db] conectada con exito');
-//const list = [];
-
 
 function addMessage(message) {
-    //list.push(message);
+
     const myMessage = new Model(message);
     myMessage.save();
 
@@ -28,9 +26,17 @@ async function getMessages() {
     return messages;
 }
 
+async function updateText(id, message) {
+    const foundMessage = await Model.findOne({ _id: id });
+    foundMessage.message = message;
+    const newMessage = await foundMessage.save();
+    return newMessage;
+}
+
 module.exports = {
     add: addMessage,
     list: getMessages,
+    updateText: updateText,
     //get
     //update
     //delete

@@ -24,8 +24,21 @@ function getMessages() {
         resolve(store.list());
     });
 }
+
+function updateMessage(id, message) {
+    return new Promise(async(resolve, reject) => {
+        if (!id || !message) {
+            reject('Datos invalidos')
+            return false;
+        } else {
+            const result = await store.updateText(id, message);
+            resolve(result);
+        }
+    });
+}
 module.exports = {
     addMessage,
     getMessages,
+    updateMessage,
 
 };
