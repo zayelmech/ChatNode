@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
             response.success(req, res, fullMessage, 201);
         })
         .catch(e => {
-            response.error(req, res, 'Informacion invalida', 400, 'Error en el controlador');
+            response.error(req, res, 'Informacion invalida', 400, 'Error en el controlador[network] :' + e);
         });
 });
 

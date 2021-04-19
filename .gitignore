@@ -1,1 +1,3 @@
 node_modules/
+.env
+components/message/dbUserData.js
