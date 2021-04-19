@@ -1,6 +1,6 @@
 const db = require('mongoose');
 const Model = require('./model');
-const dbUserData = require('./dbUserDaTa');
+const dbUserData = require('./dbUserData');
 
 const dbUser = dbUserData.user;
 const dbPassword = dbUserData.password;
@@ -37,10 +37,16 @@ async function updateText(id, message) {
     return newMessage;
 }
 
+function removeMessage(id) {
+    return Model.deleteOne({
+        _id: id
+    });
+}
 module.exports = {
     add: addMessage,
     list: getMessages,
     updateText: updateText,
+    remove: removeMessage,
     //get
     //update
     //delete
