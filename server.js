@@ -10,11 +10,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(router);
 
 
-router.get('/', (req, res) => {
+router.get('/message', (req, res) => {
+    console.log(req.headers);
+    res.header({
+        "custom-header": "Nuestro valor personalizado"
+    })
     res.send('HOLA desde get');
 });
 
-router.post('/', (req, res) => {
+router.post('/message', (req, res) => {
     res.send('HOLA desde post');
 });
 
