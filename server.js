@@ -34,10 +34,8 @@ router.delete('/message', (req, res) => {
     res.status(201).send([{ error: '', body: 'creado correctamente' }]);
     //res.send('HOLA desde DELETE:' + req.body.text);
 });
-/* 
-app.use('/', (req, res) => {
-    res.send('HOLA');
-});
- */
+
+app.use('/app', express.static('public'));
+
 app.listen(3000);
 console.log('La aplicacion esta escuchando en Localhost:3000');
